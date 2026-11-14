@@ -34,7 +34,7 @@ double Mathematical_Functions() {
 	if (v1 > 0){
 
 
-		cout << "- Square root :  " << sqrt(v1) << endl;
+		cout << "- Sqre ruaoot :  " << sqrt(v1) << endl;
 		cout << "- Power of 2 :  " << pow(v1, 2) << endl;
 		cout << "- Ceiling :  " << ceil(v1) << endl;
 		cout << "- Floor :  " << floor(v1) << endl;
@@ -76,11 +76,11 @@ int Guess_the_number() {
 		cout << "try again : ";
 		cin >> guess;
 		if (guess > random) {
-			if (abs(guess - random) >= 5) cout << "Very close! low a litile bit :) \n";
+			if ((guess - random) <= 5 )cout << "Very close! low a little bit  \n";
 			else cout << "Too high! ";
 		}
 		else if(guess < random)  {
-			if (abs(guess - random) <= 5) cout << "Very close! high a litile bit :) \n";
+			if ((random - guess) <= 5) cout << "Very close! high a little bit  \n";
 			else cout << "Too low! ";
 		}
 	}
