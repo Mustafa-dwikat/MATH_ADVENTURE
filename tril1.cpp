@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace std;
 
-double Mathematical_Operations() {
+void Mathematical_Operations() {
 	float v1, v2;
 	char op;
 	cout << "enter two numbers : ";
@@ -10,29 +10,28 @@ double Mathematical_Operations() {
 	cout << "enter an operation (+,-,*,/) : ";
 	cin >> op;
     switch (op) {
-	case '+': cout << v1 + v2;
+	case '+': cout << v1 << " + " << v2 << " = " << v1 + v2;
 		break;
-	case '-': cout << v1 - v2;
+	case '-': cout << v1 << " - " << v2 << " = " << v1 - v2;
 		break;
-	case '*': cout << v1 * v2;
+	case '*': cout << v1 << " * " << v2 << " = " << v1 * v2;
 		break;
 	case '/': if (v2 != 0)
-		cout << v1 / v2;
+		cout << v1 << " / " << v2 << " = " << v1 / v2;
 			else cout << "Indeterminate value";
 		break;
 	default: cout << "operation is not involved ";
-		return 1;
+		
 	}
 	
 	cout << endl;
 
 }
-double Mathematical_Functions() {
+void  Mathematical_Functions() {
 	float v1;
 	cout << "pls Enter a positive number : ";
 	cin >> v1;
 	if (v1 > 0){
-
 
 		cout << "- Sqre ruaoot :  " << sqrt(v1) << endl;
 		cout << "- Power of 2 :  " << pow(v1, 2) << endl;
@@ -40,20 +39,22 @@ double Mathematical_Functions() {
 		cout << "- Floor :  " << floor(v1) << endl;
 
 	}
-	else cout << "a positive pleeeeeeeeeeees ";
+	else cout << "a positive please !!! ";
 		cout << endl;
-	return 2; 
+
 
 }
-int Number_Properties() {
+void Number_Properties() {
 	int v1;
 	cout << "pls enter an integer : ";
 	cin >> v1;
 	if (v1 > 0) cout << "The number is Positive. " << endl;
 	else if (v1 < 0) cout << "The number is Negative. " << endl;
 	else cout << "The number is Zero.  " << endl;
+
 	if (v1 % 2 == 0) cout << "The number is Even.  " << endl;
 	else cout << "The number is Odd.  " << endl;
+
 	bool isPrime = true;
 	if (v1 < 2) isPrime = false;
 	for (int i = 2; isPrime && i <= v1/ 2; i++) 
@@ -63,11 +64,10 @@ int Number_Properties() {
 
 
 	cout << endl;
-	return 3;
+	
 
 }
- 
-int Guess_the_number() {
+void Guess_the_number() {
 	int random, guess = 0,i=1;
 	random = rand() % 101; //rand () % ( max - min + 1 ) + min
 	cout << "take a guess : ";
@@ -89,7 +89,7 @@ int Guess_the_number() {
 	cout << "Your Total trils : " << i;
 
 		cout << endl;
-	return 4;
+	
 
 }
 
@@ -113,7 +113,8 @@ int main() {
 			break;
 		case 4:Guess_the_number();
 			break; 
-		case 5: break;
+		case 5:
+			break;
 		default:cout << "its 1 , 2 , 3 , 4 or 5 ";
 			break;
 
