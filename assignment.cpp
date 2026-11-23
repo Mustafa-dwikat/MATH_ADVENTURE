@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-#include <cstdlib>
 using namespace std;
 
 void Mathematical_Operations() {
@@ -18,9 +17,9 @@ void Mathematical_Operations() {
 		break;
 	case '*': cout << v1 << " * " << v2 << " = " << v1 * v2;
 		break;
-	case '/': if (v2 != 0)
+	case '/':if (v2 != 0)
 		cout << v1 << " / " << v2 << " = " << v1 / v2;
-			else cout << "Indeterminate value \n";
+			else cout << "Undefined value \n";
 		break;
 	default: cout << "Operation is not involved \n";
 
@@ -30,19 +29,23 @@ void Mathematical_Operations() {
 }
 void  Mathematical_Functions() {
 	float v1;
-	cout << "Pls Enter a positive number : ";
-	cin >> v1;
-	if (v1 > 0) {
-		cout << "- Sqre ruaoot :  " << sqrt(v1) << endl;
-		cout << "- Power of 2 :  " << pow(v1, 2) << endl;
-		cout << "- Ceiling :  " << ceil(v1) << endl;
-		cout << "- Floor :  " << floor(v1) << endl;
-
+	for (;;) {
+		cout << "Pls Enter a positive number : ";
+		cin >> v1;
+		if (v1 > 0) {
+			cout << "- Squre root :  " << sqrt(v1) << endl;
+			cout << "- Power of 2 :  " << pow(v1, 2) << endl;
+			cout << "- Ceiling :  " << ceil(v1) << endl;
+			cout << "- Floor :  " << floor(v1) << endl;
+			break;
+		}
+		else {
+			cout << "A positive please !!! ";
+			cout << endl;
+			continue;
+			
+		}
 	}
-	else cout << "A positive please !!! ";
-	cout << endl;
-
-
 }
 void Number_Properties() {
 	int v1;
@@ -69,7 +72,8 @@ void Number_Properties() {
 }
 void Guess_the_number() {
 	int random, guess = 0, i = 1;
-	random = rand() % 101; 
+	srand(time(0));
+	random = rand() % 100 + 1; 
 	cout << "Take a guess between 1 and 100 : ";
 	cin >> guess;
 	for (; guess != random;i++) {
@@ -85,7 +89,7 @@ void Guess_the_number() {
 		}
 	}
 
-	cout << "You did it !!!!\n";
+	cout << "You got it !!!!\n";
 	cout << "Your Total trils : " << i;
 
 	cout << endl;
@@ -94,7 +98,7 @@ void Guess_the_number() {
 }
 
 int main() {
-	char x;
+	char x ;
 
 	do {
 		cout << endl;
@@ -105,7 +109,7 @@ int main() {
 		cout << "4. Guess the Random Number\n";
 		cout << "5. Exit\n";
 		cin >> x;
-
+		
 		switch (x) {
 		case '1': Mathematical_Operations();
 			break;
