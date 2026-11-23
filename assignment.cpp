@@ -6,10 +6,11 @@ using namespace std;
 void Mathematical_Operations() {
 	float v1, v2;
 	char op;
-	cout << "enter two numbers : ";
+	cout << "Enter two numbers : ";
 	cin >> v1 >> v2;
-	cout << "enter an operation (+,-,*,/) : ";
+	cout << "Enter an operation (+,-,*,/) : ";
 	cin >> op;
+	
 	switch (op) {
 	case '+': cout << v1 << " + " << v2 << " = " << v1 + v2;
 		break;
@@ -19,18 +20,17 @@ void Mathematical_Operations() {
 		break;
 	case '/': if (v2 != 0)
 		cout << v1 << " / " << v2 << " = " << v1 / v2;
-			else cout << "Indeterminate value";
+			else cout << "Indeterminate value \n";
 		break;
-	default: cout << "operation is not involved ";
+	default: cout << "Operation is not involved \n";
 
 	}
 
 	cout << endl;
-
 }
 void  Mathematical_Functions() {
 	float v1;
-	cout << "pls Enter a positive number : ";
+	cout << "Pls Enter a positive number : ";
 	cin >> v1;
 	if (v1 > 0) {
 		cout << "- Sqre ruaoot :  " << sqrt(v1) << endl;
@@ -39,14 +39,14 @@ void  Mathematical_Functions() {
 		cout << "- Floor :  " << floor(v1) << endl;
 
 	}
-	else cout << "a positive please !!! ";
+	else cout << "A positive please !!! ";
 	cout << endl;
 
 
 }
 void Number_Properties() {
 	int v1;
-	cout << "pls enter an integer : ";
+	cout << "Pls enter an integer : ";
 	cin >> v1;
 	if (v1 > 0) cout << "The number is Positive. " << endl;
 	else if (v1 < 0) cout << "The number is Negative. " << endl;
@@ -70,10 +70,10 @@ void Number_Properties() {
 void Guess_the_number() {
 	int random, guess = 0, i = 1;
 	random = rand() % 101; 
-	cout << "take a guess : ";
+	cout << "Take a guess between 1 and 100 : ";
 	cin >> guess;
 	for (; guess != random;i++) {
-		cout << "try again : ";
+		cout << "Try again : ";
 		cin >> guess;
 		if (guess > random) {
 			if ((guess - random) <= 5)cout << "Very close! low a little bit  \n";
@@ -105,7 +105,7 @@ int main() {
 		cout << "4. Guess the Random Number\n";
 		cout << "5. Exit\n";
 		cin >> x;
-		
+
 		switch (x) {
 		case '1': Mathematical_Operations();
 			break;
